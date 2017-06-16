@@ -1,0 +1,41 @@
+@import '~antd/dist/antd.less';
+
+#app-container {
+    padding: 20px;
+    padding-top: 40px;
+    border-radius: 4px;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255,250,240,1);
+    background: -moz-linear-gradient(top, rgba(255,250,240,1) 0%, rgba(254,249,241,1) 11%, rgba(246,246,246,1) 78%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,250,240,1)), color-stop(11%, rgba(254,249,241,1)), color-stop(78%, rgba(246,246,246,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(255,250,240,1) 0%, rgba(254,249,241,1) 11%, rgba(246,246,246,1) 78%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,250,240,1) 0%, rgba(254,249,241,1) 11%, rgba(246,246,246,1) 78%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,250,240,1) 0%, rgba(254,249,241,1) 11%, rgba(246,246,246,1) 78%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,250,240,1) 0%, rgba(254,249,241,1) 11%, rgba(246,246,246,1) 78%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffaf0', endColorstr='#ffffff', GradientType=0 );
+}
+
+.results-container {
+    max-height: 192px;
+    // overflow: scroll;
+}
+
+.searcher {
+    margin-top: 12px;
+}
+
+[class^="ant-col-"] {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

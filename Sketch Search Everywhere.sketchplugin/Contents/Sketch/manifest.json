@@ -1,0 +1,22 @@
+{
+  "author" : "MrPeak",
+  "commands" : [
+    {
+      "script" : "main.js",
+      "handler" : "onRun",
+      "shortcut" : "command alt f",
+      "name" : "Search Everywhere",
+      "identifier" : "run"
+    }
+  ],
+  "menu": {
+    "items": [
+      "run"
+    ]
+  },
+  "identifier" : "com.sketchapp.examples.search-text",
+  "version" : "1.0",
+  "description" : "Search layer and select it, by matching `textValue`, `name` or `ObjectID`.",
+  "authorEmail" : "gfeng.peak@gmail.com",
+  "name" : "Search Everywhere"
+}
