@@ -6,7 +6,7 @@ Search layer and select it, by matching `textValue`, `name` or `ObjectID`.
 
 ## Installation
 
-[Download](https://github.com/heysketch/sketch-color-picker-plus/archive/master.zip) and extract the contents of this repository. Then double-click the `Sketch Search Everywhere.sketchplugin` bundle to install the plugin.
+[Download](https://github.com/MrPeak/sketch-search-everywhere/archive/master.zip) and extract the contents of this repository. Then double-click the `Sketch Search Everywhere.sketchplugin` bundle to install the plugin.
 
 ## Usage
 
@@ -21,6 +21,6 @@ Then select the layer you find!
 
 ## Change Log
 
-#### v1.0。0: June 18, 2017
+#### v1.0.0: June 18, 2017
 
 Initial release
