@@ -3,7 +3,7 @@
 import React from "react";
 import ReactDOM, { findDOMNode } from "react-dom";
 import { LocaleProvider, Select, Row, Col } from "antd";
-import enUS from 'antd/lib/locale-provider/en_US';
+import enUS from "antd/lib/locale-provider/en_US";
 import Filter from "./Filter.jsx";
 const Option = Select.Option;
 
@@ -13,7 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.isSelecting = false;
-    this.query = '';
+    this.query = "";
     this.state = {
       selectID: null,
       filters: {
@@ -31,30 +31,27 @@ class App extends React.Component {
   onChangeSearchType(ev) {
     const value = ev.target.value;
     console.log("onChangeSearchType", value);
-    this.setState({
-      filters: {
-        type: value,
-        layerClass: this.state.filters.layerClass
-      }
-    });
+    const filters = {
+      type: value,
+      layerClass: this.state.filters.layerClass
+    };
 
-    this._query();
+    this._query(filters);
+    this.setState({ filters });
   }
 
   onFilterClassType(value) {
     console.log("onFilterClassType", value);
-    this.setState({
-      filters: {
-        type: this.state.filters.type,
-        layerClass: value || ''
-      }
-    });
 
-    this._query();
+    const filters = {
+      type: this.state.filters.type,
+      layerClass: value || ""
+    };
+    this._query(filters);
+    this.setState({ filters });
   }
 
   renderList(value) {
-    console.log(12213);
     console.log(value);
     let list = value.split("|||");
 
@@ -71,14 +68,14 @@ class App extends React.Component {
     const options = [];
     list.forEach((el, i) => {
       if (Object.keys(el).length && el.id) {
-        const isTextLayer = el.class.toLowerCase().trim() == 'mstextlayer';
+        const isTextLayer = el.class.toLowerCase().trim() == "mstextlayer";
         options.push(
           <Option value={el.id} key={i}>
             <Row style={{ textAlign: "center" }}>
               <Col title={decodeURIComponent(el.name)} span={6}>
                 {decodeURIComponent(el.name)}
               </Col>
-              
+
               {(() => {
                 if (isTextLayer) {
                   return (
@@ -114,7 +111,11 @@ class App extends React.Component {
         <Option disabled value="122" key="541">
           <Row style={{ textAlign: "center" }}>
             <Col span={6}>name</Col>
-            <Col span={6}>class</Col>
+            <Col span={6}>
+              {this.state.filters.layerClass.indexOf("TextLayer") > -1
+                ? "color"
+                : "class"}
+            </Col>
             <Col span={6}>parent name</Col>
             <Col span={6}>parent class</Col>
           </Row>
@@ -141,9 +142,9 @@ class App extends React.Component {
   }
 
   onBlur() {
-    console.log('onBlur!');
+    console.log("onBlur!");
     // request
-    window.location.hash = "@query=" + JSON.stringify({value: ''});
+    window.location.hash = "@query=" + JSON.stringify({ value: "" });
   }
 
   onInput(value) {
@@ -153,58 +154,55 @@ class App extends React.Component {
     }
 
     this.query = value;
-    
+
     console.log("onInput!");
 
-    this._query();
+    this._query(this.state.filters);
   }
-  _query() {
+  _query(filters) {
     const data = {
       value: this.query,
-      filters: this.state.filters,
+      filters: filters,
       callback: "renderList"
     };
 
-    // console.log(data);
+    console.log(123, data);
     // request
     window.location.hash = "@query=" + JSON.stringify(data);
   }
   render() {
     return (
       <LocaleProvider locale={enUS}>
-      <div>
-        <Filter
-          onChangeSearchType={this.onChangeSearchType.bind(this)}
-          onFilterClassType={this.onFilterClassType.bind(this)}
-          filters={this.state.filters}
-        />
-        <Select
-          ref="searcher"
-          mode="combobox"
-          size="large"
-          className="searcher"
-          onBlur={this.onBlur.bind(this)}
-          style={{
-            width: "100%"
-          }}
-          allowClear
-          onSelect={this.onSelect.bind(this)}
-          onChange={this.onInput.bind(this)}
-          filterOption={false}
-          placeholder="Just input it"
-          dropdownClassName="results-container"
-        >
-          {this.state.options}
-        </Select>
-      
-      </div>
+        <div>
+          <Filter
+            onChangeSearchType={this.onChangeSearchType.bind(this)}
+            onFilterClassType={this.onFilterClassType.bind(this)}
+            filters={this.state.filters}
+          />
+          <Select
+            ref="searcher"
+            mode="combobox"
+            size="large"
+            className="searcher"
+            onBlur={this.onBlur.bind(this)}
+            style={{
+              width: "100%"
+            }}
+            allowClear
+            onSelect={this.onSelect.bind(this)}
+            onChange={this.onInput.bind(this)}
+            filterOption={false}
+            placeholder="Just input it"
+            dropdownClassName="results-container"
+          >
+            {this.state.options}
+          </Select>
+
+        </div>
       </LocaleProvider>
     );
   }
 }
 
 // exports to global
-window.App = ReactDOM.render(
-  <App />, 
-  document.getElementById("app-container")
-);
+window.App = ReactDOM.render(<App />, document.getElementById("app-container"));

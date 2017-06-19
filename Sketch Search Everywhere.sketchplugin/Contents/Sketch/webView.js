@@ -45,14 +45,13 @@ function getWebView(urlPath) {
             App.filters.type + " CONTAINS [c] %@"
           );
 
-          log(matchedLayers);
-
           // Get layers' info
           arr = App.getLayersAttrs(matchedLayers);
-
-          log(arr);
         }
 
+        // Limit results' length to 15.
+        arr = arr.slice(0, 15);
+        
         // Execute webview's gloabl function, and pass data to it
         windowObject.evaluateWebScript(
           'window.App.renderList("' + arr.join("|||") + '")'

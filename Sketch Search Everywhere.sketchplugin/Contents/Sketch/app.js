@@ -188,7 +188,7 @@ var App = {
 
     var pageOfLayer = this.findPageOfLayer(selectedLayer);
 
-    log(pageOfLayer);
+    // log(pageOfLayer);
 
     // Set current page
     this.doc.setCurrentPage(pageOfLayer);
@@ -207,7 +207,7 @@ var App = {
   },
   findPageOfLayer(layer) {
     var _layer = layer;
-    log(_layer);
+    // log(_layer);
     while (_layer.class().toString().toLowerCase() != "mspage") {
       // log(_layer);
       _layer = _layer.parentGroup();
