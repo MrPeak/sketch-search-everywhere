@@ -21,6 +21,11 @@ Then select the layer you find!
 
 ## Change Log
 
+#### v1.0.1: June 19, 2017
+
+- [x] Fix filter delay issue
+- [x] Limit search results' length to 15
+
 #### v1.0.0: June 18, 2017
 
-Initial release
+- Initial release
