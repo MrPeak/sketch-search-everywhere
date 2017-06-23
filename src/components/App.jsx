@@ -52,7 +52,7 @@ class App extends React.Component {
   }
 
   renderList(value) {
-    console.log(value);
+    console.log('responseData:', value.length);
     let list = value.split("|||");
 
     list = list.map(el => {
@@ -166,7 +166,7 @@ class App extends React.Component {
       callback: "renderList"
     };
 
-    console.log(123, data);
+    console.log('queryParam:', data);
     // request
     window.location.hash = "@query=" + JSON.stringify(data);
   }

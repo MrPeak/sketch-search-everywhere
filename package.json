@@ -1,6 +1,6 @@
 {
   "name": "sketch-search-everywhere",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Search layer and select it, by matching `textValue`, `name` or `ObjectID`.",
   "main": "index.js",
   "scripts": {

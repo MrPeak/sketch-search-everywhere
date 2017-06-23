@@ -46,12 +46,10 @@ class Filter extends React.Component {
           size="small"
           defaultValue="TextLayer"
           placeholder="Filter className"
-          allowClear
           dropdownStyle={{ maxHeight: 52, overflow: 'scroll' }}
           filterOption={(input, option) =>
             option.props.children.toLowerCase().indexOf(input.toLowerCase()) >=
             0}
-          showSearch
           onChange={this.props.onFilterClassType}
           disabled={this.props.filters.type === 'stringValue'}
         >

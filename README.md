@@ -21,6 +21,10 @@ Then select the layer you find!
 
 ## Change Log
 
+#### v1.0.2: June 23, 2017
+
+- [x] Disable ClassType filter search
+
 #### v1.0.1: June 19, 2017
 
 - [x] Fix filter delay issue

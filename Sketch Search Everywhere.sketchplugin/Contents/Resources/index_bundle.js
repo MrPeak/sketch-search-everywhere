@@ -31130,12 +31130,10 @@ var Filter = function (_React$Component) {
             size: "small",
             defaultValue: "TextLayer",
             placeholder: "Filter className",
-            allowClear: true,
             dropdownStyle: { maxHeight: 52, overflow: 'scroll' },
             filterOption: function filterOption(input, option) {
               return option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0;
             },
-            showSearch: true,
             onChange: this.props.onFilterClassType,
             disabled: this.props.filters.type === 'stringValue'
           },
@@ -32352,7 +32350,7 @@ var App = function (_React$Component) {
   }, {
     key: "renderList",
     value: function renderList(value) {
-      console.log(value);
+      console.log('responseData:', value.length);
       var list = value.split("|||");
 
       list = list.map(function (el) {
@@ -32499,7 +32497,7 @@ var App = function (_React$Component) {
         callback: "renderList"
       };
 
-      console.log(123, data);
+      console.log('queryParam:', data);
       // request
       window.location.hash = "@query=" + JSON.stringify(data);
     }
