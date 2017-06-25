@@ -31089,12 +31089,12 @@ var Filter = function (_React$Component) {
     key: "render",
     value: function render() {
       var children = [];
-      var classDictionary = ["ShapeGroup", "BitmapLayer", "TextLayer", "SymbolInstance", "ArtboardGroup", "LayerGroup"];
+      var classDictionary = ["All", "ShapeGroup", "BitmapLayer", "TextLayer", "SymbolInstance", "ArtboardGroup", "LayerGroup"];
 
       classDictionary.forEach(function (_class, i) {
         children.push(_react2.default.createElement(
           Option,
-          { key: i.toString(36) + i, value: _class },
+          { key: i.toString(36) + i, value: _class === 'All' ? '' : _class },
           _class
         ));
       });

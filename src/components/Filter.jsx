@@ -17,6 +17,7 @@ class Filter extends React.Component {
   render() {
     const children = [];
     const classDictionary = [
+      "All",
       "ShapeGroup",
       "BitmapLayer",
       "TextLayer",
@@ -27,7 +28,7 @@ class Filter extends React.Component {
 
     classDictionary.forEach((_class, i) => {
       children.push(
-        <Option key={i.toString(36) + i} value={_class}>{_class}</Option>
+        <Option key={i.toString(36) + i} value={_class === 'All' ? '' : _class}>{_class}</Option>
       );
     });
 

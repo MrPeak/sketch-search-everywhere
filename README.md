@@ -21,6 +21,10 @@ Then select the layer you find!
 
 ## Change Log
 
+#### v1.0.3: June 25, 2017
+
+- [x] Add 'All' Class filter
+
 #### v1.0.2: June 23, 2017
 
 - [x] Disable ClassType filter search
