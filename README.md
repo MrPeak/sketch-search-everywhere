@@ -10,7 +10,7 @@ Search layer and select it, by matching `textValue`, `name` or `ObjectID`.
 
 ## Usage
 
-Just type <kbd>Alt</kbd>+<kbd>Command</kbd>+<kbd>F</kbd> everywhere.
+Just type <kbd>Alt</kbd>+<kbd>Control</kbd>+<kbd>F</kbd> everywhere.
 
 And enter the textContent/Name/ObjectId that the layers cotain
 

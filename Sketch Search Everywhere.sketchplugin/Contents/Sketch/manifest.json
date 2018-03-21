@@ -4,7 +4,7 @@
     {
       "script" : "main.js",
       "handler" : "onRun",
-      "shortcut" : "command alt f",
+      "shortcut" : "control alt f",
       "name" : "Search Everywhere",
       "identifier" : "run"
     }
