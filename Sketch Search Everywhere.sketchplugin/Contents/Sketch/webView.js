@@ -39,7 +39,7 @@ function getWebView(urlPath) {
 
           // Find qualified layers
           var matchedLayers = App.findLayers_inContainer_filterByType(
-            queryData.value,
+            decodeURI(queryData.value),
             nil,
             App.filters.layerClass || nil,
             App.filters.type + " CONTAINS [c] %@"
